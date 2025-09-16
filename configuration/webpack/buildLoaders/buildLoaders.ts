@@ -17,5 +17,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     use: [isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
   };
 
-  return [typescriptLoader, cssLoader];
+  const fontLoader = {
+    test: /\.(woff2|)$/i,
+    type: "asset/resource",
+    generator: {
+      filename: "fonts/[name].[contenthash][ext]",
+    },
+  };
+
+  return [typescriptLoader, cssLoader, fontLoader];
 }

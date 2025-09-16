@@ -4,7 +4,7 @@ import { BuildEnvironmentVariables, BuildPaths, buildWebpackConfiguration } from
 
 const PATHS: BuildPaths = {
   build: path.resolve(__dirname, "build"),
-  entry: path.resolve(__dirname, "src", "index.tsx"),
+  entry: path.resolve(__dirname, "src", "app", "index.tsx"),
   html: path.resolve(__dirname, "public", "index.html"),
 };
 
