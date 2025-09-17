@@ -5,5 +5,7 @@ export default {
   rules: {
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
+    "media-query-no-invalid": null,
+    "nesting-selector-no-missing-scoping-root": null,
   },
 };
