@@ -10,5 +10,6 @@ export default {
     "color-hex-length": null,
     "custom-property-empty-line-before": null,
     "at-rule-empty-line-before": null,
+    "declaration-empty-line-before": null,
   },
 };
