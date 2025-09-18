@@ -16,9 +16,7 @@ $breakpoints: (
     @media (min-width: #{$value}) {
       @content;
     }
-  }
-
- @else {
+  } @else {
     @warn "No breakpoint found for '#{$key}' in $breakpoints.";
   }
 }
@@ -32,9 +30,7 @@ $breakpoints: (
     @media (max-width: #{$max}) {
       @content;
     }
-  }
-
- @else {
+  } @else {
     @warn "No breakpoint found for '#{$key}' in $breakpoints.";
   }
 }

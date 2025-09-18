@@ -7,5 +7,8 @@ export default {
     "scss/at-rule-no-unknown": true,
     "media-query-no-invalid": null,
     "nesting-selector-no-missing-scoping-root": null,
+    "color-hex-length": null,
+    "custom-property-empty-line-before": null,
+    "at-rule-empty-line-before": null,
   },
 };
