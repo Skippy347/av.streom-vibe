@@ -1,1 +1,8 @@
-@use "@/styles/base/fonts.scss";
+@use "../shared/assets/styles/base/normalize";
+@use "../shared/assets/styles/base/fonts";
+@use "../shared/assets/styles/helpers/functions";
+@use "../shared/assets/styles/helpers/mixins";
+@use "../shared/assets/styles/helpers/media";
+@use "../shared/assets/styles/base/variables";
+@use "../shared/assets/styles/helpers/utils";
+@use "../shared/assets/styles/base/globals";

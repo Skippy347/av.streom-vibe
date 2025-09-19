@@ -1,7 +1,7 @@
 @use "functions" as *;
 
-@mixin text-fluid($max: 48, $min: 16) {
-  font-size: fluid($max, $min);
+@mixin fluid-text($min: 16, $max: 48) {
+  font-size: fluid($min, $max);
 }
 
 @mixin visibility-hidden {
