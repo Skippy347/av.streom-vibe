@@ -4,7 +4,7 @@ import webpack from "webpack";
 import { BuildOptions } from "../types/webpackConfiguration";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-  const { isDevelopment } = options;
+  const { isDevelopment, paths } = options;
 
   const typescriptLoader = {
     test: /\.tsx?$/,
@@ -14,7 +14,19 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
   const cssLoader = {
     test: /\.s[ac]ss$/i,
-    use: [isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+    use: [
+      isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader,
+      "css-loader",
+      {
+        loader: "sass-loader",
+        options: {
+          webpackImporter: true,
+          sassOptions: {
+            includePaths: [paths.src],
+          },
+        },
+      },
+    ],
   };
 
   const fontLoader = {
@@ -25,5 +37,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     },
   };
 
-  return [typescriptLoader, cssLoader, fontLoader];
+  const imageLoader = {
+    test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
+    type: "asset/resource",
+    generator: {
+      filename: "images/[name].[contenthash][ext]",
+    },
+  };
+
+  return [typescriptLoader, cssLoader, fontLoader, imageLoader];
 }

@@ -11,5 +11,6 @@ export default {
     "custom-property-empty-line-before": null,
     "at-rule-empty-line-before": null,
     "declaration-empty-line-before": null,
+    "declaration-property-value-no-unknown": null,
   },
 };

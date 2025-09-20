@@ -1,0 +1,7 @@
+@use "@/shared/assets/styles/helpers/functions" as *;
+
+.logo {
+  &__image {
+    width: fluid(116, 199);
+  }
+}
